@@ -2,11 +2,44 @@
 
 const windowInput = document.querySelector(".input");
 const windowOutput = document.querySelector(".output");
+const permitido = /[a-z ]/y;
 let letras = [];
 let resultado = "";
 
+function generarEncriptado() {
+    let string = windowInput.value.toLowerCase();
+    if (validarTexto(string) == true){
+        let i = 0;
+        encriptar(string);
+        while (i < letras.length) {
+            resultado = resultado + letras[i];
+            i++;
+        }
+        windowOutput.value = resultado;
+        string = "";
+        letras = [];
+        resultado = "";
+    }   
+}
+
+function generarDesencriptado() {
+    let string = windowInput.value.toLowerCase();
+    if (validarTexto(string) == true){
+        let i = 0;
+        desencriptar(string);
+        while (i < letras.length) {
+            resultado = resultado + letras[i];
+            i++;
+        }
+        windowOutput.value = resultado;
+        string = "";
+        letras = [];
+        resultado = "";
+        return false
+    }   
+}
+
 function validarTexto(text) {
-    const permitido = /[a-z ]/y;
     for (var i = 0; i < text.length; i++) {
         if (!permitido.test(text)) {
             windowOutput.value = "\n\n     --- Character inválido ---   ";
@@ -80,39 +113,6 @@ function desencriptar(string) {
         }
     }
     console.log(letras, letras.length);
-}
-
-function generarEncriptado() {
-    let string = windowInput.value;
-    if (validarTexto(string) == true){
-        let i = 0;
-        encriptar(string);
-        while (i < letras.length) {
-            resultado = resultado + letras[i];
-            i++;
-        }
-        windowOutput.value = resultado;
-        string = "";
-        letras = [];
-        resultado = "";
-    }   
-}
-
-function generarDesencriptado() {
-    let string = windowInput.value;
-    if (validarTexto(string) == true){
-        let i = 0;
-        desencriptar(string);
-        while (i < letras.length) {
-            resultado = resultado + letras[i];
-            i++;
-        }
-        windowOutput.value = resultado;
-        string = "";
-        letras = [];
-        resultado = "";
-        return false
-    }   
 }
 
 function copiar(){
