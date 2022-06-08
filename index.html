@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>[---[Encriptador]---]</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img id="alura-logo" src="Alura_Logo.png" alt="Alura logo">
+        <h1>Encriptador</h1>
+    </header>
+
+    <main>
+        <section class="interfaz1">
+            <textarea class="input"
+                placeholder="Escriba el texto que desea encriptar o desencriptar. Solo letras en minúscula, sin acento:"></textarea>
+            <div class="botonera-ed">
+                <button id="botonEncriptar" onclick="generarEncriptado()">Encriptar</button>
+                <button id="botonDesencriptar" onclick="generarDesencriptado()">Desencriptar</button>
+            </div>
+        </section>
+
+        <section class="interfaz2">
+            <textarea readonly class="output"></textarea>
+            <div class="botonera-cb">
+                <button id="boton-copiar" onclick="copiar()">Copiar</button>
+                <button id="boton-borrar" onclick="borrar()">Borrar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="texto-pie">Gonzalo Matias Albornoz</p>
+        <a href="https://github.com/gonzalomalb?tab=repositories"><img id="ghlogo" src="GitHub_Logo_White.png"></a>
+    </footer>
+
+</body>
+
+<script src="logica.js"></script>
+
+</html>
