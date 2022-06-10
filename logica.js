@@ -2,7 +2,7 @@
 
 const windowInput = document.querySelector(".input");
 const windowOutput = document.querySelector(".output");
-const permitido = /[a-z ]/y;
+const permitido =  new RegExp(/^[a-z]+$/, "i");
 let letras = [];
 let resultado = "";
 
